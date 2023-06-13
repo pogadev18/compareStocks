@@ -11,6 +11,10 @@ h2 {
   font-weight: 400;
 }
 
+.perf-buttons {
+  margin-bottom: 30px;
+}
+
 .perf-buttons button,
 .header button {
   width: 145px;
@@ -22,6 +26,10 @@ h2 {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   font-weight: semi-bold;
+}
+
+.header {
+  margin-bottom: 30px;
 }
 
 .perf-buttons button:hover,
@@ -62,4 +70,14 @@ h2 {
 .perf-buttons button.active {
   background-color: lightseagreen;
   color: white;
+}
+
+.titleAndCount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.titleAndCount h2 {
+  margin: 0 0 0px;
 }

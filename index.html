@@ -22,7 +22,10 @@
     </div>
 
     <div class="perf-buttons">
-      <h2>Performanta Saptamanala</h2>
+      <div class="titleAndCount">
+        <h2>Performanta Saptamanala</h2>
+        <span id="week-count"></span>
+      </div>
       <button onclick="filterDataByPerfWeek(0, 5, event)">
         Perf Week 0-5%
       </button>
@@ -50,14 +53,17 @@
     </div>
 
     <div class="perf-buttons">
-      <h2>Performanta Lunara</h2>
-      <button id="filter-1" onclick="perfWeekZeroFifteen(0, 5, event)">
+      <div class="titleAndCount">
+        <h2>Performanta Lunara</h2>
+        <span id="month-count"></span>
+      </div>
+      <button id="filter-1" onclick="filterDataByPerfMonth(0, 5, event)">
         Perf Month 0-5%
       </button>
-      <button id="filter-1" onclick="perfWeekZeroFifteen(5, 10, event)">
+      <button id="filter-1" onclick="filterDataByPerfMonth(5, 10, event)">
         Perf Month 5%-10%
       </button>
-      <button id="filter-1" onclick="perfWeekZeroFifteen(10, 15, event)">
+      <button id="filter-1" onclick="filterDataByPerfMonth(10, 15, event)">
         Perf Month 10%-15%
       </button>
       <button onclick="filterDataByPerfMonth(15, 20, event)">

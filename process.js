@@ -96,15 +96,15 @@ function filterDataByPerfWeek(min, max, event) {
   // Now call displayData with the filtered data
   displayData(filteredData);
 
+  // Update count
+  const weekCountElement = document.getElementById('week-count');
+  weekCountElement.textContent = `Number of entries: ${filteredData.length}`;
+  document.getElementById('month-count').textContent = '';
   // Remove active class from all buttons
   removeActiveClass();
 
   // Add active class to clicked button
   event.target.classList.add('active');
-}
-
-function resetData() {
-  displayData(globalData);
 }
 
 function filterDataByPerfMonth(min, max, event) {
@@ -120,6 +120,10 @@ function filterDataByPerfMonth(min, max, event) {
   // Now call displayData with the filtered data
   displayData(filteredData);
 
+  // Update count
+  const monthCountElement = document.getElementById('month-count');
+  monthCountElement.textContent = `Number of entries: ${filteredData.length}`;
+  document.getElementById('week-count').textContent = '';
   // Remove active class from all buttons
   removeActiveClass();
 
@@ -130,4 +134,8 @@ function filterDataByPerfMonth(min, max, event) {
 function resetData() {
   displayData(globalData);
   removeActiveClass();
+
+  // Reset counts
+  document.getElementById('week-count').textContent = '';
+  document.getElementById('month-count').textContent = '';
 }
