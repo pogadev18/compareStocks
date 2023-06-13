@@ -1,3 +1,5 @@
+let globalData = [];
+
 function handleFile() {
   const input = document.getElementById('excel-file');
   const file = input.files[0];
@@ -32,7 +34,8 @@ function handleFile() {
       formattedData.push(obj);
     }
 
-    displayData(formattedData);
+    globalData = formattedData; // Store formatted data to the global variable
+    displayData(formattedData); // Display all data
   };
 
   reader.readAsArrayBuffer(file);
@@ -71,4 +74,60 @@ function displayData(data) {
 
     outputDiv.appendChild(entryDiv);
   });
+}
+
+function removeActiveClass() {
+  // Remove active class from all buttons
+  document
+    .querySelectorAll('button')
+    .forEach((btn) => btn.classList.remove('active'));
+}
+
+function filterDataByPerfWeek(min, max, event) {
+  // Filter the globalData where 'Perf Week' is between min and max
+  const filteredData = globalData.filter((entry) => {
+    if (entry['Perf Week']) {
+      let performance = parseFloat(entry['Perf Week'].replace('%', ''));
+      return performance >= min && performance < max;
+    }
+    return false;
+  });
+
+  // Now call displayData with the filtered data
+  displayData(filteredData);
+
+  // Remove active class from all buttons
+  removeActiveClass();
+
+  // Add active class to clicked button
+  event.target.classList.add('active');
+}
+
+function resetData() {
+  displayData(globalData);
+}
+
+function filterDataByPerfMonth(min, max, event) {
+  // Filter the globalData where 'Perf Week' is between min and max
+  const filteredData = globalData.filter((entry) => {
+    if (entry['Perf Month']) {
+      let performance = parseFloat(entry['Perf Month'].replace('%', ''));
+      return performance >= min && performance < max;
+    }
+    return false;
+  });
+
+  // Now call displayData with the filtered data
+  displayData(filteredData);
+
+  // Remove active class from all buttons
+  removeActiveClass();
+
+  // Add active class to clicked button
+  event.target.classList.add('active');
+}
+
+function resetData() {
+  displayData(globalData);
+  removeActiveClass();
 }

@@ -1,9 +1,41 @@
-/* styles.css */
+html,
+body {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+body {
+  padding: 20px;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+.perf-buttons button,
+.header button {
+  width: 145px;
+  display: inline-block;
+  border: 1px solid lightseagreen;
+  border-radius: 5px;
+  background: 0;
+  padding: 5px 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: semi-bold;
+}
+
+.perf-buttons button:hover,
+.header button:hover {
+  background-color: lightseagreen;
+  color: white;
+}
+
 #output {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
   grid-gap: 20px; /* space between grid items */
   padding: 10px;
+  margin-top: 30px;
 }
 
 #output .entry {
@@ -24,5 +56,10 @@
 }
 
 #output .entry .key-value .key {
-  font-weight: bold;
+  font-weight: 400;
+}
+
+.perf-buttons button.active {
+  background-color: lightseagreen;
+  color: white;
 }

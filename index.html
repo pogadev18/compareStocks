@@ -4,13 +4,81 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;900&display=swap"
+      rel="stylesheet"
+    />
     <title>Companies data</title>
     <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js" defer></script>
     <script src="process.js" defer></script>
   </head>
   <body>
-    <input type="file" id="excel-file" accept=".xlsx" />
-    <button onclick="handleFile()">Process Excel File</button>
+    <div class="header">
+      <input type="file" id="excel-file" accept=".xlsx" />
+      <button onclick="handleFile()">Process Excel File</button>
+      <button onclick="resetData()">Reset</button>
+    </div>
+
+    <div class="perf-buttons">
+      <h2>Performanta Saptamanala</h2>
+      <button onclick="filterDataByPerfWeek(0, 5, event)">
+        Perf Week 0-5%
+      </button>
+      <button onclick="filterDataByPerfWeek(5, 10, event)">
+        Perf Week 5-10%
+      </button>
+      <button onclick="filterDataByPerfWeek(10, 15, event)">
+        Perf Week 10-15%
+      </button>
+      <button onclick="filterDataByPerfWeek(15, 20, event)">
+        Perf Week 15-20%
+      </button>
+      <button onclick="filterDataByPerfWeek(20, 25, event)">
+        Perf Week 20-25%
+      </button>
+      <button onclick="filterDataByPerfWeek(25, 30, event)">
+        Perf Week 25-30%
+      </button>
+      <button onclick="filterDataByPerfWeek(30, 35, event)">
+        Perf Week 30-35%
+      </button>
+      <button onclick="filterDataByPerfWeek(35, 40, event)">
+        Perf Week 35-40%
+      </button>
+    </div>
+
+    <div class="perf-buttons">
+      <h2>Performanta Lunara</h2>
+      <button id="filter-1" onclick="perfWeekZeroFifteen(0, 5, event)">
+        Perf Month 0-5%
+      </button>
+      <button id="filter-1" onclick="perfWeekZeroFifteen(5, 10, event)">
+        Perf Month 5%-10%
+      </button>
+      <button id="filter-1" onclick="perfWeekZeroFifteen(10, 15, event)">
+        Perf Month 10%-15%
+      </button>
+      <button onclick="filterDataByPerfMonth(15, 20, event)">
+        Perf Month 15%-20%
+      </button>
+      <button onclick="filterDataByPerfMonth(15, 20, event)">
+        Perf Month 15-20%
+      </button>
+      <button onclick="filterDataByPerfMonth(20, 25, event)">
+        Perf Month 20-25%
+      </button>
+      <button onclick="filterDataByPerfMonth(25, 30, event)">
+        Perf Month 25-30%
+      </button>
+      <button onclick="filterDataByPerfMonth(30, 35, event)">
+        Perf Month 30-35%
+      </button>
+      <button onclick="filterDataByPerfMonth(35, 40, event)">
+        Perf Month 35-40%
+      </button>
+    </div>
     <div id="output"></div>
   </body>
 </html>
