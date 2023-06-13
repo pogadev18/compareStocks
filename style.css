@@ -1,0 +1,28 @@
+/* styles.css */
+#output {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+  grid-gap: 20px; /* space between grid items */
+  padding: 10px;
+}
+
+#output .entry {
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+#output .entry .key-value {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 5px;
+  border-bottom: 1px solid #eee;
+}
+
+#output .entry .key-value:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+#output .entry .key-value .key {
+  font-weight: bold;
+}
